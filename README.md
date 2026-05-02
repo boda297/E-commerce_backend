@@ -1,29 +1,57 @@
-# E-Commerce App
+# E-commerce Backend API
 
-The **E-Commerce App** is a full-stack, production-ready web application designed for modern online retail[cite: 2]. It features a robust **NestJS** backend providing a RESTful API and a responsive **React** frontend powered by **Vite** and **Redux Toolkit** for state management[cite: 2]. The platform supports a complete shopping lifecycle, from product discovery to secure checkout and administrative management.
+This is a robust and scalable e-commerce backend API built with NestJS[cite: 1]. It provides a complete set of endpoints to handle user authentication, product catalogs, shopping carts, order processing, and media uploads, designed with modularity and role-based access control in mind[cite: 1].
+
+## 1. Tech Used
+Based on the project configuration, the following technologies and integrations are utilized[cite: 1]:
+* **Framework:** NestJS[cite: 1]
+* **Language:** TypeScript[cite: 1]
+* **Database:** MongoDB (utilizing custom MongoId DTOs for validation)[cite: 1]
+* **Payment Processing:** Paymob API[cite: 1]
+* **Media Storage:** Cloudinary[cite: 1]
+* **Deployment:** Vercel[cite: 1]
+* **Testing:** Jest (E2E and unit testing)[cite: 1]
+* **Linting & Formatting:** ESLint and Prettier[cite: 1]
 
 ## 2. Features
-*   **Customer Experience**: Includes a dynamic product grid, filtering and sorting options, a sliding product showcase, and dedicated gender-based collections (Men/Women).
-*   **Shopping Cart & Checkout**: Integrated cart system with secure checkout flows, supported by **Paymob** for payments and **Cloudinary** for image hosting.
-*   **Comprehensive Authentication**: Role-based access control (RBAC) featuring secure login, registration, and protected routes for users and admins.
-*   **Admin Management Suite**: A dedicated dashboard for managing products, tracking customer orders, and overseeing user accounts.
-*   **User Profiles**: Personalized user areas to view order history, manage saved items, and update profile details.
+The platform is broken down into several dedicated modules to separate concerns[cite: 1]:
+* **Authentication & Authorization:** Secure user login and registration with role-based access control (guards and decorators)[cite: 1].
+* **User Management:** Endpoints to manage user profiles and data[cite: 1].
+* **Product Catalog:** Product queries and separate admin capabilities for managing the catalog (`product` and `product-admin` modules)[cite: 1].
+* **Shopping Cart:** Add, update, and manage items in the user's shopping cart[cite: 1].
+* **Checkout & Payments:** Secure checkout process integrated with Paymob for handling payment details[cite: 1].
+* **Order Management:** Customer order tracking and an `admin-orders` module for administrative oversight[cite: 1].
+* **Media Uploads:** Dedicated module for handling image uploads directly to Cloudinary[cite: 1].
 
 ## 3. The Process
-The application utilizes a decoupled architecture for maximum scalability:
-1.  **Backend Development**: Built with **NestJS** using **TypeScript**, the backend follows a modular structure (`src/auth`, `src/product`, `src/order`) to handle complex business logic and database interactions.
-2.  **Frontend Implementation**: Developed with **React** and **JSX**, utilizing **Vite** for optimized builds and **Redux Toolkit** (`src/redux`) to synchronize cart and authentication states across the application.
-3.  **API Integration**: Communication is handled through a structured library layer, ensuring consistent data fetching and error handling between the frontend and the NestJS server.
-4.  **Deployment Readiness**: Configured for cloud hosting with `vercel.json` and environmental configurations for production services like Cloudinary and Paymob.
+The backend was developed using NestJS's modular architecture to ensure high maintainability and scalability[cite: 1]. 
+* **Modularity:** Each feature (Auth, Cart, Checkout, Products, Orders) is encapsulated in its own module with dedicated Controllers, Services, and Entities[cite: 1].
+* **Validation:** Data Transfer Objects (DTOs) are used extensively across all modules to validate incoming request payloads before they reach the service layer[cite: 1].
+* **Security:** Role-based access control is implemented using custom decorators and guards to differentiate between standard users and administrators[cite: 1].
+* **Integrations:** Third-party services like Paymob and Cloudinary are isolated into a `config` directory to keep the business logic clean and maintainable[cite: 1].
 
 ## 4. Running the Project
 
-### Backend Setup
-1.  Navigate to the backend directory: `cd backend`.
-2.  Install dependencies: `npm install`.
-3.  Start in development mode: `npm run start:dev`.
+**Prerequisites:**
+* Node.js (v16 or higher recommended)
+* npm or yarn
+* MongoDB instance
+* Paymob and Cloudinary account credentials
 
-### Frontend Setup
-1.  Navigate to the frontend directory: `cd frontend`.
-2.  Install dependencies: `npm install`.
-3.  Start the development server: `npm run dev`.
+**Installation & Setup:**
+1. Clone the repository to your local machine.
+2. Navigate to the project directory and install the dependencies:
+   ```bash
+   npm install
+   ```
+3. Create a `.env` file in the root directory and populate it with your environment variables (Database URI, JWT secrets, Cloudinary keys, Paymob credentials)[cite: 1].
+4. Start the development server:
+   ```bash
+   npm run start:dev
+   ```
+5. To run the test suites:
+   ```bash
+   npm run test        # For unit tests
+   npm run test:e2e    # For end-to-end tests
+   ```
+```
