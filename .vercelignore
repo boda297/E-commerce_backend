@@ -1,0 +1,30 @@
+# Dependencies
+node_modules
+
+# Source
+
+# Testing
+test
+*.test.ts
+*.spec.ts
+
+# Development
+*.env.local
+.env.*.local
+
+# Build
+dist
+build
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+
+# IDE
+.vscode
+.idea
+*.swp
+
+# Git
+.git
+.gitignore
