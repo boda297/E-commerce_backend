@@ -1,35 +1,28 @@
+// src/main.ts
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
 
 async function createApp() {
   const app = await NestFactory.create(AppModule);
-
   app.enableCors({
     origin: '*',
     credentials: true,
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     allowedHeaders: [
-      'Origin',
-      'X-Requested-With',
-      'Content-Type',
-      'Accept',
-      'Authorization',
-      'X-HTTP-Method-Override',
+      'Origin', 'X-Requested-With', 'Content-Type',
+      'Accept', 'Authorization', 'X-HTTP-Method-Override',
     ],
   });
-
   app.useGlobalPipes(
     new ValidationPipe({
       transform: true,
-      transformOptions: {
-        enableImplicitConversion: true,
-      },
+      transformOptions: { enableImplicitConversion: true },
       whitelist: true,
       forbidNonWhitelisted: false,
     }),
   );
-
+  await app.init();
   return app;
 }
 
@@ -37,28 +30,19 @@ async function createApp() {
 async function bootstrap() {
   const app = await createApp();
   await app.listen(process.env.PORT ?? 3000);
-  console.log(
-    `Application is running on: http://localhost:${process.env.PORT ?? 3000}`,
-  );
 }
 
-// Export for Vercel serverless
+// Vercel serverless handler
 let cachedApp: any;
 
-export default async (req: any, res: any) => {
+module.exports = async (req: any, res: any) => {
   if (!cachedApp) {
     cachedApp = await createApp();
-    await cachedApp.init();
   }
-
   const instance = cachedApp.getHttpAdapter().getInstance();
-  return instance(req, res);
+  instance(req, res);
 };
 
-// Run bootstrap for local development
 if (require.main === module) {
-  bootstrap().catch((err) => {
-    console.error('Failed to start application:', err);
-    process.exit(1);
-  });
+  bootstrap();
 }
