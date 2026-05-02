@@ -7,8 +7,8 @@ import { CreateCheckoutDto } from './dto/create-checkout.dto';
 import { Checkout, CheckoutDocument } from './entities/checkout.entity';
 import { Model, Types } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
-import { Order, OrderDocument } from 'src/order/entities/order.entity';
-import { Cart, CartDoc } from 'src/cart/entities/cart.entity';
+import { Order, OrderDocument } from '../order/entities/order.entity';
+import { Cart, CartDoc } from '../cart/entities/cart.entity';
 import Stripe from 'stripe';
 import { ConfigService } from '@nestjs/config';
 

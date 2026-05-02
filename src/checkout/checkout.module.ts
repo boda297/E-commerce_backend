@@ -5,8 +5,8 @@ import { CheckoutController } from './checkout.controller';
 import { Checkout, CheckoutSchema } from './entities/checkout.entity';
 import { OrderModule } from '../order/order.module';
 import { CartModule } from '../cart/cart.module';
-import { Order, OrderSchema } from 'src/order/entities/order.entity';
-import { Cart, CartSchema } from 'src/cart/entities/cart.entity';
+import { Order, OrderSchema } from '../order/entities/order.entity';
+import { Cart, CartSchema } from '../cart/entities/cart.entity';
 
 @Module({
   imports: [

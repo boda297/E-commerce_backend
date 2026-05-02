@@ -11,10 +11,10 @@ import {
 } from '@nestjs/common';
 import { FileInterceptor, FilesInterceptor } from '@nestjs/platform-express';
 import { UploadService } from './upload.service';
-import { AuthGuard } from 'src/auth/auth.guard';
-import { Roles } from 'src/roles/roles.decorator';
-import { Role } from 'src/roles/role.enum';
-import { RolesGuard } from 'src/roles/roles.guard';
+import { AuthGuard } from '../auth/auth.guard';
+import { Roles } from '../roles/roles.decorator';
+import { Role } from '../roles/role.enum';
+import { RolesGuard } from '../roles/roles.guard';
 
 @Controller('upload')
 export class UploadController {

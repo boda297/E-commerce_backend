@@ -13,11 +13,11 @@ import { ProductService } from './product.service';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
 import { QueryProductDto } from './dto/query-product.dto';
-import { MongoIdDTO } from 'src/common/dto/mongoId.dto';
-import { Roles } from 'src/roles/roles.decorator';
-import { AuthGuard } from 'src/auth/auth.guard';
-import { RolesGuard } from 'src/roles/roles.guard';
-import { Role } from 'src/roles/role.enum';
+import { MongoIdDTO } from '../common/dto/mongoId.dto';
+import { Roles } from '../roles/roles.decorator';
+import { AuthGuard } from '../auth/auth.guard';
+import { RolesGuard } from '../roles/roles.guard';
+import { Role } from '../roles/role.enum';
 
 @Controller('products')
 export class ProductController {

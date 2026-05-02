@@ -12,11 +12,11 @@ import {
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { MongoIdDTO } from 'src/common/dto/mongoId.dto';
-import { Roles } from 'src/roles/roles.decorator';
-import { Role } from 'src/roles/role.enum';
-import { AuthGuard } from 'src/auth/auth.guard';
-import { RolesGuard } from 'src/roles/roles.guard';
+import { MongoIdDTO } from '../common/dto/mongoId.dto';
+import { Roles } from '../roles/roles.decorator';
+import { Role } from '../roles/role.enum';
+import { AuthGuard } from '../auth/auth.guard';
+import { RolesGuard } from '../roles/roles.guard';
 
 
 @Controller('users')

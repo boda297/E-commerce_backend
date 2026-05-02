@@ -3,7 +3,7 @@ import { CartService } from './cart.service';
 import { CartController } from './cart.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Cart, CartSchema } from './entities/cart.entity';
-import { ProductModule } from 'src/product/product.module';
+import { ProductModule } from '../product/product.module';
 
 @Module({
   imports: [

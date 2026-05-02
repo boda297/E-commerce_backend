@@ -6,8 +6,8 @@ import {
   Req,
 } from '@nestjs/common';
 import { OrderService } from './order.service';
-import { AuthGuard } from 'src/auth/auth.guard';
-import { MongoIdDTO } from 'src/common/dto/mongoId.dto';
+import { AuthGuard } from '../auth/auth.guard';
+import { MongoIdDTO } from '../common/dto/mongoId.dto';
 
 @Controller('order')
 export class OrderController {

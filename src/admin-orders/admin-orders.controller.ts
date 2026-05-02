@@ -8,10 +8,10 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { AdminOrdersService } from './admin-orders.service';
-import { RolesGuard } from 'src/roles/roles.guard';
-import { Roles } from 'src/roles/roles.decorator';
-import { Role } from 'src/roles/role.enum';
-import { AuthGuard } from 'src/auth/auth.guard';
+import { RolesGuard } from '../roles/roles.guard';
+import { Roles } from '../roles/roles.decorator';
+import { Role } from '../roles/role.enum';
+import { AuthGuard } from '../auth/auth.guard';
 
 @Controller('admin/admin-orders')
 export class AdminOrdersController {

@@ -1,8 +1,8 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { Document, Types } from 'mongoose';
-import { Product } from 'src/product/entities/product.entity';
-import { User } from 'src/users/entities/user.entity';
-import { PaymentDetails } from '../interfaces/payment-details.interface';
+import { Product } from '../../product/entities/product.entity';
+import { User } from '../../users/entities/user.entity';
+import { PaymentDetails } from '../../interfaces/payment-details.interface';
 
 @Schema({ _id: false })
 export class CheckoutItem {

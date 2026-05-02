@@ -4,7 +4,7 @@ import { UpdateOrderDto } from './dto/update-order.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { Order, OrderDocument } from './entities/order.entity';
 import { Model } from 'mongoose';
-import { MongoIdDTO } from 'src/common/dto/mongoId.dto';
+import { MongoIdDTO } from '../common/dto/mongoId.dto';
 
 @Injectable()
 export class OrderService {

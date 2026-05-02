@@ -14,11 +14,11 @@ import { CheckoutService } from './checkout.service';
 import { CreateCheckoutDto } from './dto/create-checkout.dto';
 import { UpdateCheckoutDto } from './dto/update-checkout.dto';
 import { Types } from 'mongoose';
-import { MongoIdDTO } from 'src/common/dto/mongoId.dto';
-import { AuthGuard } from 'src/auth/auth.guard';
-import { RolesGuard } from 'src/roles/roles.guard';
-import { Roles } from 'src/roles/roles.decorator';
-import { Role } from 'src/roles/role.enum';
+import { MongoIdDTO } from '../common/dto/mongoId.dto';
+import { AuthGuard } from '../auth/auth.guard';
+import { RolesGuard } from '../roles/roles.guard';
+import { Roles } from '../roles/roles.decorator';
+import { Role } from '../roles/role.enum';
 
 @Controller('checkout')
 export class CheckoutController {
